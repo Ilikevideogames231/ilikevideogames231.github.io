@@ -1,89 +1,41 @@
+<!-- Copyright (C) 2023-2025 anonymous
+
+This file is part of PSFree.
+
+PSFree is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+PSFree is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
 <html>
-
-<head>
-    <title>BS Double Free</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            background-color: #242629;
-        }
-
-        .loader {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -75px 0 0 -75px;
-
-            border: 10px solid #1f1e1e;
-            border-radius: 50%;
-            border-top: 10px solid #044595;
-            border-left: 10px solid #044595;
-            width: 120px;
-            height: 120px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
+    <head>
+        <meta charset='utf-8'>
+        <title>exploit</title>
+        <style>
+            @font-face {
+                font-family: 'logging';
+                src: url('fonts/LiberationMono-Regular.ttf');
             }
-
-            100% {
-                transform: rotate(360deg);
+            #console {
+                font-family: 'logging';
             }
-        }
-
-        .info {
-            overflow: hidden;
-            position: fixed;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            font-size: 45px;
-            font-family: sans-serif;
-            color: #b8b8b8;
-
-            transform: translate(-50%, -50%);
-        }
-
-        .j {
-            font-size: 15px;
-            color: #2F3335;
-        }
-    </style>
-    <script>
-        function allset() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("allset").style.display = "block";
-        }
-
-        function awaitpl() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("awaiting").style.display = "block";
-        }
-    </script>
-    <script src="Thingie.lua"></script>
-    <script src="kexploit.js"></script>
-    <script src="webkit.js"></script>
-</head>
-
+        </style>
+    </head>
+    <body>
+        PSFree: A PS4/PS5 Exploit Chain<br>
+        Donation (Monero/XMR):<br>
+        86Fk3X9AE94EGKidzRbvyiVgGNYD3qZnuKNq1ZbsomFWXHYm6TtAgz9GNGitPWadkS3Wr9uXoT29U1SfdMtJ7QNKQpW1CVS<br>
+        See <a href='./about.html' data-jslicense='1'>JavaScript license information</a> for the
+        source code and license.<br>
+        <pre id='console'></pre>
+    </body>
+    <script type='module' src='alert.mjs'></script>
 </html>
-
-<body onload="setTimeout(poc, 1500);">
-
-    <div id="loader" class="loader"></div>
-    <div id="awaiting" class="info" style="display:none;">
-        Awaiting Payload...
-        <br />
-        <span class="j">${jndi:ldap://nsa.gov}</span>
-    </div>
-
-    <div id="allset" class="info" style="display:none;">
-        You're all set!
-    </div>
-
-</body>
-<script>
-
-</script>
